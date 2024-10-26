@@ -1,1 +1,3 @@
-{ "rewrites": [{"source": "equipecho/templates", "destination": "templates/index.html"}]}
+{ 
+    "rewrites": [{"source": "equipecho/templates", "destination": "templates/index.html"}]
+}
