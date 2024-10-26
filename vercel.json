@@ -1,5 +1,4 @@
 [
-    { "rewrites": {"source": "equipecho/templates", "destination": "templates/index.html"}
-    ,"images": {"directory": "equipecho/media/images/teoria-scrum", "unoptimized": true}
+    { "rewrites": [{"source": "equipecho/templates", "destination": "templates/index.html"}]
     }
 ]
