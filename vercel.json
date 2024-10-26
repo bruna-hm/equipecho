@@ -1,5 +1,5 @@
 [
     { "rewrites": {"source": "equipecho/templates", "destination": "templates/index.html"}
-    ,"images": {"directory": "media/images/"}
+    ,"images": {"directory": "assets/media/images/"}
     }
 ]
