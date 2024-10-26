@@ -1,1 +1,1 @@
-{ "rewrites": [{"source": "/(.*)", "destination": "/"}]}
+{ "rewrites": [{"source": "equipecho/templates", "destination": "templates/index.html"}]}
