@@ -38,46 +38,6 @@ const quizData = [
         c: "Scrum Master",
         d: "Stakeholders",
         correct: "c"
-    },
-    {
-        question: "O que define quando um item do backlog está pronto?",
-        a: "Sprint Goal",
-        b: "Definition of Done",
-        c: "Velocity",
-        d: "Technical Debt",
-        correct: "b"
-    },
-    {
-        question: "Qual é o ciclo de trabalho fixo no Scrum onde se cria um incremento utilizável?",
-        a: "Sprint",
-        b: "Refinement",
-        c: "Review",
-        d: "Epic",
-        correct: "a"
-    },
-    {
-        question: "Qual é a reunião diária de 15 minutos para alinhar o progresso da Sprint?",
-        a: "Sprint Review",
-        b: "Sprint Restropective",
-        c: "Daily Scrum",
-        d: "Sprint Planning",
-        correct: "c"
-    },
-    {
-        question: "O que é uma User Story no contexto do Scrum?",
-        a: "Uma descrição curta de uma funcionalidade do ponto de vista do usuário",
-        b: "Um documento que define o plano da Sprint",
-        c: "Um gráfico de progresso do projeto",
-        d: "Um ciclo de trabalho fixo de 1 a 4 semanas",
-        correct: "a"
-    },
-    {
-        question: "O que é o Sprint Goal no Scrum?",
-        a: "A quantidade de trabalho que deve ser feita",
-        b: "O objetivo que a equipe espera alcançar ao final da Sprint",
-        c: "A lista de tarefas técnicas",
-        d: "O gráfico que mostra o progresso do trabalho",
-        correct: "b"
     }
 ];
 const quiz = document.getElementById("quiz");
@@ -107,21 +67,21 @@ function loadQuiz() {
 }
 function highlightAnswers() {
     const correctAnswer = quizData[currentQuestion].correct;
-    
+
     document.querySelectorAll('.alternative-button').forEach(button => {
         const answer = button.getAttribute('data-answer');
         if (answer === correctAnswer) {
-            button.classList.add('correct');  
+            button.classList.add('correct');
         }
         if (answer === selectedAnswer && answer !== correctAnswer) {
-            button.classList.add('wrong');  
+            button.classList.add('wrong');
         }
     });
 }
 function showResults() {
     quiz.innerHTML = '';
     results.innerHTML = `Você acertou ${score} de ${quizData.length} questões.`;
-    submitButton.style.display = 'none';  
+    submitButton.style.display = 'none';
     const restartButton = document.createElement('button');
     restartButton.innerText = 'Reiniciar Quiz';
     restartButton.classList.add('restart-button');
@@ -133,13 +93,13 @@ function restartQuiz() {
     currentQuestion = 0;
     selectedAnswer = null;
     results.innerHTML = '';
-    submitButton.style.display = 'block';  
-    loadQuiz();  
+    submitButton.style.display = 'block';
+    loadQuiz();
 }
 submitButton.addEventListener("click", () => {
     if (!hasAnswered) {
         if (selectedAnswer) {
-            highlightAnswers(); 
+            highlightAnswers();
             if (selectedAnswer === quizData[currentQuestion].correct) {
                 score++;
             }
